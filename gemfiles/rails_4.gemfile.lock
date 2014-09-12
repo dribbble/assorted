@@ -1,7 +1,7 @@
 PATH
   remote: ../
   specs:
-    assorted (0.0.1)
+    assorted (0.0.2)
       activerecord (>= 3)
 
 GEM
