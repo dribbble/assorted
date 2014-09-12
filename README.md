@@ -1,6 +1,9 @@
 # Assorted
 
-TODO: Write a gem description
+[![Build Status](https://travis-ci.org/dribbble/assorted.svg)](https://travis-ci.org/dribbble/assorted)
+[![Code Climate](https://codeclimate.com/github/dribbble/assorted/badges/gpa.svg)](https://codeclimate.com/github/dribbble/assorted)
+
+Assorted is a tiny gem adding some convenience to your ActiveRecord objects with `asc` and `desc` scopes to sort your queries. By default these sort by `created_at`, but you can sort by whichever colum makes sense for your needs. See [Usage](#usage) below for more details.
 
 ## Installation
 
@@ -20,7 +23,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+By default, `asc` and `desc` sort by `created_at`.
+
+```ruby
+SomeModel.asc  # equivalent to SomeModel.sort("created_at asc")
+SomeModel.desc # equivalent to SomeModel.sort("created_at desc")
+```
+
+You can change this per query, by passing an alternate column.
+
+```ruby
+SomeModel.asc(:updated_at)  # equivalent to SomeModel.sort("updated_at asc")
+SomeModel.desc(:updated_at) # equivalent to SomeModel.sort("updated_at desc")
+```
+
+To change the default sort column for a given class, specify its `sorting_column`.
+
+```ruby
+class SomeModel
+  self.sorting_column = "average_score"
+end
+
+SomeModel.asc  # equivalent to SomeModel.sort("average_score asc")
+SomeModel.desc # equivalent to SomeModel.sort("average_score desc")
+```
 
 ## Contributing
 
