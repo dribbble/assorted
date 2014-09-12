@@ -1,11 +1,19 @@
 module Assorted
   module Scopes
-    def asc(column = :created_at)
+    def asc(column = sorting_column)
       sanitized_order(column, :asc)
     end
 
-    def desc(column = :created_at)
+    def desc(column = sorting_column)
       sanitized_order(column, :desc)
+    end
+
+    def sorting_column
+      @sorting_column ||= :created_at
+    end
+
+    def sorting_column=(column)
+      @sorting_column = column
     end
 
     private

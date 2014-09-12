@@ -25,5 +25,13 @@ RSpec.describe Assorted::Scopes do
     expect(ExampleRecord.count).to eq(1)
   end
 
-  it "allows an alternate default sorting column to be supplied"
+  it "allows an alternate default sorting column to be supplied" do
+    more = ExampleRecord.create(example_count: 2)
+    less = ExampleRecord.create(example_count: 1)
+
+    ExampleRecord.sorting_column = :example_count
+
+    expect(ExampleRecord.asc).to eq([less, more])
+    expect(ExampleRecord.desc).to eq([more, less])
+  end
 end

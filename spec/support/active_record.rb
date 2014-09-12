@@ -13,7 +13,11 @@ RSpec.configure do |config|
         table.timestamps
       end
 
+      original_sorting_column = ExampleRecord.sorting_column
+
       example.run
+
+      ExampleRecord.sorting_column = original_sorting_column
 
       raise ActiveRecord::Rollback
     end
