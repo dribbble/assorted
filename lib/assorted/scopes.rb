@@ -1,4 +1,4 @@
-module Sorted
+module Assorted
   module Scopes
 
   end

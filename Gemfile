@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in sorted.gemspec
+# Specify your gem's dependencies in assorted.gemspec
 gemspec
