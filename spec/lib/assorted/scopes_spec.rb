@@ -2,8 +2,8 @@ require "spec_helper"
 
 RSpec.describe Assorted::Scopes do
   it "sorts by created_at by default" do
-    first = ExampleRecord.create
-    second = ExampleRecord.create
+    first = ExampleRecord.create(created_at: 2.days.ago)
+    second = ExampleRecord.create(created_at: 1.day.ago)
 
     expect(ExampleRecord.asc).to eq([first, second])
     expect(ExampleRecord.desc).to eq([second, first])
