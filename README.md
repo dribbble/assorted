@@ -37,11 +37,11 @@ SomeModel.asc(:updated_at)  # equivalent to SomeModel.sort("updated_at asc")
 SomeModel.desc(:updated_at) # equivalent to SomeModel.sort("updated_at desc")
 ```
 
-To change the default sort column for a given class, specify its `sorting_column`.
+To change the default sort column for a given class, specify with `set_sorting_column`.
 
 ```ruby
 class SomeModel
-  self.sorting_column = "average_score"
+  set_sorting_column "average_score"
 end
 
 SomeModel.asc  # equivalent to SomeModel.sort("average_score asc")

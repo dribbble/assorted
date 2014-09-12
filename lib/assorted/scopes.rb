@@ -8,12 +8,8 @@ module Assorted
       sanitized_order(column, :desc)
     end
 
-    def sorting_column
-      @sorting_column ||= :created_at
-    end
-
-    def sorting_column=(column)
-      @sorting_column = column
+    def set_sorting_column(column)
+      self.sorting_column = column
     end
 
     private
@@ -25,5 +21,14 @@ module Assorted
         raise ActiveRecord::StatementInvalid, "Unknown column #{column}"
       end
     end
+
+    def sorting_column
+      @sorting_column ||= :created_at
+    end
+
+    def sorting_column=(column)
+      @sorting_column = column
+    end
+
   end
 end
