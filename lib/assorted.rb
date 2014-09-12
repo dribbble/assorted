@@ -4,5 +4,5 @@ require "assorted/version"
 require "assorted/scopes"
 
 ActiveSupport.on_load(:active_record) do
-  include Assorted::Scopes
+  extend Assorted::Scopes
 end
