@@ -20,7 +20,7 @@ module Assorted
 
     def sanitized_order(column, direction)
       if attribute_names.include?(column.to_s)
-        order("#{column} #{direction}")
+        order("#{table_name}.#{column} #{direction}")
       else
         raise ActiveRecord::StatementInvalid, "Unknown column #{column}"
       end
