@@ -1,5 +1,8 @@
-require "sorted/version"
+require "active_record"
 
-module Sorted
-  # Your code goes here...
+require "sorted/version"
+require "sorted/scopes"
+
+ActiveSupport.on_load(:active_record) do
+  include Sorted::Scopes
 end
