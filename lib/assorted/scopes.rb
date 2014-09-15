@@ -23,7 +23,7 @@ module Assorted
     end
 
     def sorting_column
-      @sorting_column ||= :created_at
+      @sorting_column || Assorted.options[:sorting_column]
     end
 
     def sorting_column=(column)

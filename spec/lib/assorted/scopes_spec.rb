@@ -18,7 +18,7 @@ RSpec.describe Assorted::Scopes do
   end
 
   it "prevents SQL injection attacks" do
-    record = ExampleRecord.create
+    ExampleRecord.create
     injection_attempt = "created_at desc; delete * from example_records;"
 
     expect { ExampleRecord.asc(injection_attempt) }.to raise_exception(ActiveRecord::StatementInvalid)

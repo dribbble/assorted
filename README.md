@@ -30,11 +30,22 @@ SomeModel.asc  # equivalent to SomeModel.order("created_at asc")
 SomeModel.desc # equivalent to SomeModel.order("created_at desc")
 ```
 
-You can change this per query, by passing an alternate column.
+You can change this per query by passing an alternate column.
 
 ```ruby
 SomeModel.asc(:updated_at)  # equivalent to SomeModel.order("updated_at asc")
 SomeModel.desc(:updated_at) # equivalent to SomeModel.order("updated_at desc")
+```
+
+To change the default sort column for your entire application, use `Assorted.options`.
+
+```ruby
+# config/intializers/assorted.rb, for example
+Assorted.options[:sorting_column] = :id
+
+# then, elsewhere in your app
+SomeModel.asc  # equivalent to SomeModel.order("id asc")
+SomeModel.desc # equivalent to SomeModel.order("id desc")
 ```
 
 To change the default sort column for a given class, specify with `set_sorting_column`.

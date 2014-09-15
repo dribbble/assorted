@@ -13,11 +13,10 @@ RSpec.configure do |config|
         table.timestamps
       end
 
-      original_sorting_column = ExampleRecord.send(:sorting_column)
-
       example.run
 
-      ExampleRecord.send(:sorting_column=, original_sorting_column)
+      ExampleRecord.send(:sorting_column=, nil)
+      Assorted.instance_variable_set(:@options, nil)
 
       raise ActiveRecord::Rollback
     end
