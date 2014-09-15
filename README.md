@@ -26,15 +26,15 @@ Or install it yourself as:
 By default, `asc` and `desc` sort by `created_at`.
 
 ```ruby
-SomeModel.asc  # equivalent to SomeModel.sort("created_at asc")
-SomeModel.desc # equivalent to SomeModel.sort("created_at desc")
+SomeModel.asc  # equivalent to SomeModel.order("created_at asc")
+SomeModel.desc # equivalent to SomeModel.order("created_at desc")
 ```
 
 You can change this per query, by passing an alternate column.
 
 ```ruby
-SomeModel.asc(:updated_at)  # equivalent to SomeModel.sort("updated_at asc")
-SomeModel.desc(:updated_at) # equivalent to SomeModel.sort("updated_at desc")
+SomeModel.asc(:updated_at)  # equivalent to SomeModel.order("updated_at asc")
+SomeModel.desc(:updated_at) # equivalent to SomeModel.order("updated_at desc")
 ```
 
 To change the default sort column for a given class, specify with `set_sorting_column`.
@@ -44,8 +44,8 @@ class SomeModel
   set_sorting_column "average_score"
 end
 
-SomeModel.asc  # equivalent to SomeModel.sort("average_score asc")
-SomeModel.desc # equivalent to SomeModel.sort("average_score desc")
+SomeModel.asc  # equivalent to SomeModel.order("average_score asc")
+SomeModel.desc # equivalent to SomeModel.order("average_score desc")
 ```
 
 ## Contributing
