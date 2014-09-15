@@ -41,18 +41,18 @@ To change the default sort column for your entire application, use `Assorted.opt
 
 ```ruby
 # config/intializers/assorted.rb, for example
-Assorted.options[:sorting_column] = :id
+Assorted.options[:default_sort_column] = :id
 
 # then, elsewhere in your app
 SomeModel.asc  # equivalent to SomeModel.order("id asc")
 SomeModel.desc # equivalent to SomeModel.order("id desc")
 ```
 
-To change the default sort column for a given class, specify with `set_sorting_column`.
+To change the default sort column for a given class, specify with `assorted` in your model.
 
 ```ruby
 class SomeModel
-  set_sorting_column "average_score"
+  assorted default_sort_column: :average_score
 end
 
 SomeModel.asc  # equivalent to SomeModel.order("average_score asc")

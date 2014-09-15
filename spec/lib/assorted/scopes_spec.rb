@@ -30,7 +30,7 @@ RSpec.describe Assorted::Scopes do
     less = ExampleRecord.create(example_count: 1)
 
     class ExampleRecord
-      set_sorting_column :example_count
+      assorted default_sort_column: :example_count
     end
 
     expect(ExampleRecord.asc).to eq([less, more])

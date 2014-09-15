@@ -8,8 +8,8 @@ module Assorted
       sanitized_order(column, :desc)
     end
 
-    def set_sorting_column(column)
-      self.sorting_column = column
+    def assorted(options)
+      assorted_options.merge!(options)
     end
 
     private
@@ -23,11 +23,11 @@ module Assorted
     end
 
     def sorting_column
-      @sorting_column || Assorted.options[:sorting_column]
+      assorted_options[:default_sort_column] || Assorted.options[:default_sort_column]
     end
 
-    def sorting_column=(column)
-      @sorting_column = column
+    def assorted_options
+      @assorted_options ||= {}
     end
 
   end

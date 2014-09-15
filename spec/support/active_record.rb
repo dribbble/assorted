@@ -15,7 +15,7 @@ RSpec.configure do |config|
 
       example.run
 
-      ExampleRecord.send(:sorting_column=, nil)
+      ExampleRecord.instance_variable_set(:@assorted_options, nil)
       Assorted.instance_variable_set(:@options, nil)
 
       raise ActiveRecord::Rollback

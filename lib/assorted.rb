@@ -6,7 +6,7 @@ require "assorted/scopes"
 module Assorted
   def self.options
     @options ||= {
-      sorting_column: :created_at,
+      default_sort_column: :created_at,
     }
   end
 end
