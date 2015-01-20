@@ -5,4 +5,4 @@ rvm:
 gemfile:
   - gemfiles/rails_3.gemfile
   - gemfiles/rails_4.gemfile
-
+script: "bundle exec rake test"
